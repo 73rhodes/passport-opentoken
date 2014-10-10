@@ -1,1 +1,1 @@
-Passport authentication strategy for PingFederate using the OpenToken API
+Passport strategy for authenticating with PingFederate using the OpenToken API
