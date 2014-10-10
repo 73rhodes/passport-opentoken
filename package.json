@@ -1,6 +1,6 @@
 {
   "name": "passport-opentoken",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Passport strategy for authenticating with PingFederate using the OpenToken API",
   "main": "./lib/passport-opentoken",
   "scripts": {
@@ -9,12 +9,12 @@
   "author": "Darren DeRidder",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.9.6",
     "opentoken": "^1.0.5",
     "passport-strategy": "^1.0.0",
     "pkginfo": "^0.2.3"
   },
   "devDependencies": {
+    "express": "^4.9.6",
     "chai": "1.x.x",
     "chai-passport-strategy": "0.1.x",
     "mocha": "1.x.x"
