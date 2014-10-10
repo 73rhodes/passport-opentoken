@@ -4,19 +4,20 @@
   "description": "Passport strategy for authenticating with PingFederate using the OpenToken API",
   "main": "./lib",
   "scripts": {
-    "test": "mocha --reporter spec test/*.js"
+    "test": "node_modules/.bin/mocha --reporter spec test/*.js"
   },
   "author": "Darren DeRidder",
   "license": "ISC",
   "dependencies": {
     "express": "^4.9.6",
     "opentoken": "^1.0.5",
-    "passport-strategy": "^1.0.0"
+    "passport-strategy": "^1.0.0",
+    "pkginfo": "^0.2.3"
   },
   "devDependencies": {
-    "chai": "^1.9.2",
-    "chai-passport-strategy": "^0.2.0",
-    "mocha": "^1.21.4"
+    "chai": "1.x.x",
+    "chai-passport-strategy": "0.1.x",
+    "mocha": "1.x.x"
   },
   "directories": {
     "test": "test"
