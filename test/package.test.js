@@ -1,7 +1,6 @@
 /* global describe, it, expect */
 var chai     = require('chai');
 var strategy = require('..');
-var otk = require('..');
 
 chai.use(require('chai-passport-strategy'));
 global.expect = chai.expect;
@@ -9,7 +8,7 @@ global.expect = chai.expect;
 describe('passport-anonymous', function() {
     
   it('should report a version', function() {
-    expect(otk.version).to.be.a('string');
+    expect(strategy.version).to.be.a('string');
   });
 
   it('should export Strategy constructor directly from package', function() {

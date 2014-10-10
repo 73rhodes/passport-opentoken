@@ -2,7 +2,7 @@
 /* jshint expr: true */
 
 var chai = require('chai');
-var Strategy = require('../lib/strategy');
+var Strategy = require('../lib/passport-opentoken/strategy');
 
 chai.use(require('chai-passport-strategy'));
 global.expect = chai.expect;

@@ -2,7 +2,7 @@
   "name": "passport-opentoken",
   "version": "0.0.1",
   "description": "Passport strategy for authenticating with PingFederate using the OpenToken API",
-  "main": "./lib",
+  "main": "./lib/passport-opentoken",
   "scripts": {
     "test": "node_modules/.bin/mocha --reporter spec test/*.js"
   },
