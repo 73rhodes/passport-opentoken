@@ -15,7 +15,14 @@ describe('Strategy', function() {
   it('should be named opentoken', function() {
     expect(strategy.name).to.equal('opentoken');
   });
+
+  it('should throw if constructed without a verify callback', function () {
+    expect(function () {
+      var s = new Strategy();
+    }).to.throw(TypeError, 'OpenToken strategy requires a verify callback');
+  });
   
+  /*
   describe('handling a request', function() {
     var ok, request;
     
@@ -40,5 +47,6 @@ describe('Strategy', function() {
     });
 
   });
+  // */
   
 });
