@@ -1,6 +1,6 @@
 {
   "name": "passport-opentoken",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Passport strategy for authenticating with PingFederate using the OpenToken API",
   "main": "./lib/passport-opentoken",
   "scripts": {
