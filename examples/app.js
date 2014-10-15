@@ -83,10 +83,10 @@ passport.use(new OpenTokenStrategy(otkOptions, verifyCallback));
 // Routes
 
 app.get('/login/opentoken', function (req, res) {
-  var ssoUrl = "https://qa-test.labs.ca.alcatel-lucent.com:9031" + 
+  var ssoUrl = "https://localhost:9031" + 
     "/idp/startSSO.ping" +
     "?PartnerSpId=PF-DEMO" + 
-    "&TargetResource=http://darren-desktop.ca.alcatel-lucent.com:3000/login/opentoken/callback";
+    "&TargetResource=http://localhost:3000/login/opentoken/callback";
   res.status(302).redirect(ssoUrl);
 });
 
@@ -97,7 +97,7 @@ app.get('/login/opentoken/callback', passport.authenticate('opentoken'), functio
 
 app.get('/logout/opentoken', function (req, res) {
   req.session.destroy();
-  res.status(302).redirect('https://qa-test.labs.ca.alcatel-lucent.com:9031/quickstart-app-idp/go?action=logout');
+  res.status(302).redirect('https://localhost:9031/quickstart-app-idp/go?action=logout');
 });
 
 
