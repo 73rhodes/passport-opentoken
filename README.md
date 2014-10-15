@@ -5,15 +5,10 @@ This is a work in progress, but usable.
 Usage
 -----
 
-Redirect a route to PingFederate or whatever your OpenToken server is,
-using a properly crafted URL containing `PartnerSpId` and `TargetResource`
-URL parameters.
+Create a login redirect to your PingFederate / OpenToken server,
+with a URL containing `PartnerSpId` and `TargetResource` parameters,
+a login callback route and a logout route.
 
-`PartnerSpId` identifies the Service Provider ID to use, as configured on
-the PingFederate server.
-
-`TargetResource` is the callback URL that PingFederate will redirect to
-after a successful login, with the token stuck onto the query string.
 
 ```javascript
 app.get('/login/opentoken', function (req, res) {
@@ -21,22 +16,12 @@ app.get('/login/opentoken', function (req, res) {
     "?PartnerSpId=PF-DEMO" +
     "&TargetResource=https://localhost:3000/login/opentoken/callback");
 });
-```
 
-Create a login callback route. PingFederate will query this URL with a token
-in the query string.
-
-```javascript
 app.get('/login/opentoken/callback', passport.authenticate('opentoken'), function (req, res) {
   res.redirect('/dashboard.html'); // or whatever your landing page is
 });
-```
 
-Create a logout route, too. It should destroy your session and redirect to the logout URL that 
-you have configured on your PingFederate server.
-
-```js
-app.all('/logout.html', function (req, res) {
+app.all('/logout/opentoken', function (req, res) {
   req.session.destroy();
   res.redirect('https://localhost:9031/quickstart-app-idp/go?action=logout');
 });
@@ -45,28 +30,20 @@ app.all('/logout.html', function (req, res) {
 Configuration
 -------------
 
-Before any of the above will actually work, you need to configure passport to use
-the opentoken strategy.
-
-First, create a verify callback function that passport will use to look up
-a user.
+Before the above will work, you need to configure passport to use
+the opentoken strategy. Create a [verify callback](http://passportjs.org/guide/configure/)
+and instantiate an `OpenTokenStrategy` object for `passport` to use.
 
 ```js
 function verifyCallback(username, done) {
   // see http://passportjs.org/guide/configure/ for an example
   // of a verify callback.
 });
-```
 
-Next, create an `OpenTokenStrategy` with the necessary options.
-
-```js
 var otkOptions = {
   password: 'blahblah',
   cipherSuite: 2
 };
 
-var otkStrategy = new OpenTokenStrategy(otkOptions, verifyCallback);
-
-passport.use(otkStrategy);
+passport.use(new OpenTokenStrategy(otkOptions, verifyCallback));
 ```
