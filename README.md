@@ -41,9 +41,12 @@ function verifyCallback(username, done) {
 });
 
 var otkOptions = {
+  tokenName: 'mytoken',
   password: 'blahblah',
   cipherSuite: 2
 };
 
 passport.use(new OpenTokenStrategy(otkOptions, verifyCallback));
 ```
+
+If using sessions, you'll need `passport.serializeUser` and `passport.deserializeUser` functions as per the passport [documentation](http://passportjs.org/guide/configure/).
