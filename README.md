@@ -2,6 +2,10 @@ Passport strategy for authenticating with PingFederate using the OpenToken API
 
 This is a work in progress, but usable.
 
+Install
+-------
+`npm install passport-opentoken`
+
 Usage
 -----
 
