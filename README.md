@@ -1,4 +1,4 @@
-Passport strategy for authenticating with PingFederate using the OpenToken API
+Passport strategy for authenticating with PingFederate using the [OpenToken API](https://github.com/darrenderidder/node-opentoken).
 
 This is a work in progress, but usable.
 
