@@ -21,7 +21,7 @@ app.use(passport.session());
  * Options for OpenToken parser
  */
 var otkOptions = {
-  password: 'blah',
+  password: 'testPassword',
   cipherSuite: 2,
   tokenName: 'mytoken',
   tokenTolerance: 3600, // seconds
@@ -43,6 +43,11 @@ var users = {
     id: "joe",
     name: "Joe Dohn",
     email: "joe@example.com"
+  },
+  foobar: {
+    id: "foobar",
+    name: "Foo Bar",
+    email: "foo@bar.com"
   }
 };
 
@@ -92,7 +97,11 @@ app.get('/login/opentoken', function (req, res) {
 
 app.get('/login/opentoken/callback', passport.authenticate('opentoken'), function (req, res) {
   console.log("sending result");
-  res.send("It worked. Have a cookie.");
+  res.send("It worked. Have a cookie.\n<pre>" +
+"    (.)(')\n" +
+"   / ___, \\  __\n" +
+"   \\ '--' / (::)\n\n" +
+"    mmm...</pre>");
 });
 
 app.get('/logout/opentoken', function (req, res) {

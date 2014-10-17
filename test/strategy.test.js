@@ -11,7 +11,7 @@ describe('Strategy', function () {
 
   var strategy = new Strategy(
     {
-      tokenName: 'opentoken'
+      tokenName: 'mytoken'
     },
     function () { return 0; }
   );
