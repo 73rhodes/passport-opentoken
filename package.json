@@ -1,6 +1,6 @@
 {
   "name": "passport-opentoken",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Passport strategy for authenticating with PingFederate using the OpenToken API",
   "main": "./lib/passport-opentoken",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "Darren DeRidder",
   "license": "ISC",
   "dependencies": {
-    "opentoken": "^1.0.9",
+    "opentoken": "^1.0.10",
     "passport-strategy": "^1.0.0",
     "pkginfo": "^0.2.3"
   },
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/darrenderidder/passport-opentoken.git"
+    "url": "https://github.com/73rhodes/passport-opentoken.git"
   },
   "keywords": [
     "passport",
@@ -32,7 +32,7 @@
     "opentoken"
   ],
   "bugs": {
-    "url": "https://github.com/darrenderidder/passport-opentoken/issues"
+    "url": "https://github.com/73rhodes/passport-opentoken/issues"
   },
-  "homepage": "https://github.com/darrenderidder/passport-opentoken"
+  "homepage": "https://github.com/73rhodes/passport-opentoken"
 }
