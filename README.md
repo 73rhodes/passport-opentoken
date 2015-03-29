@@ -6,6 +6,8 @@ Install
 -------
 `npm install passport-opentoken`
 
+<img src="http://npm.packagequality.com/badge/passport-opentoken.png"/>
+
 Usage
 -----
 
