@@ -1,6 +1,6 @@
 {
   "name": "passport-opentoken",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Passport strategy for authenticating with PingFederate using the OpenToken API",
   "main": "./lib/passport-opentoken",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "Darren DeRidder",
   "license": "ISC",
   "dependencies": {
-    "opentoken": "^1.0.10",
+    "opentoken": "^1.0.11",
     "passport-strategy": "^1.0.0",
     "pkginfo": "^0.2.3"
   },
