@@ -3,7 +3,6 @@ var express  = require('express');
 var session  = require('express-session');
 var passport = require('passport');
 var OpenTokenStrategy = require('..'); // require('passport-opentoken');
-var util     = require('util');
 var app      = express();
 var server   = http.createServer(app);
 module.exports = server;
