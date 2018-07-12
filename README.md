@@ -1,3 +1,5 @@
+[![DeepScan grade](https://deepscan.io/api/projects/2829/branches/20466/badge/grade.svg)](https://deepscan.io/dashboard#view=project&pid=2829&bid=20466)
+
 Passport strategy for authenticating with PingFederate using the [OpenToken API](https://github.com/darrenderidder/node-opentoken).
 
 This is a work in progress, but usable.
