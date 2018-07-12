@@ -60,7 +60,7 @@ function verifyCallback(username, done) {
     return done(null, false, { message: 'Incorrect username.' });
   }
   return done(null, user); 
-};
+}
 
 
 /**
