@@ -111,6 +111,6 @@ app.get('/logout/opentoken', function (req, res) {
 
 
 // Listen for connections
-var server = app.listen(3000, function () {
+app.listen(3000, function () {
   console.log("Listening on port %d", server.address().port);
 });
