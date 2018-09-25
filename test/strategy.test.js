@@ -11,9 +11,11 @@ describe('Strategy', function () {
 
   var strategy = new Strategy(
     {
-      tokenName: 'mytoken'
+      tokenName: 'mytoken',
+      password: 'testPassword',
+      cipherSuite: 2
     },
-    function () { return 0; }
+    function (subject, cb) { cb(null, subject); }
   );
 
   it('should be named opentoken', function () {
@@ -36,31 +38,52 @@ describe('Strategy', function () {
     }).to.throw(TypeError, 'OpenToken strategy requires a verify callback');
   });
 
-  /*
   describe('handling a request', function() {
-    var ok, request;
-    
-    before(function(done) {
-      chai.passport(strategy)
-        .pass(function() {
-          ok = true;
+    var testToken = 'T1RLAQLVVgI6nfAXif1wYQz-4Hoqqjpk-RCRhrYo_A3vfozy8DwQgX_iAAAgXtSyTiGFVbQGmJ7-USFFjaZYuPueXSr8Gl2W5APuFWw*'
+    var testSubject = 'foobar'
+
+    it('should call success with body param', function(done) {
+      chai.passport.use(strategy)
+        .success(function(user) {
+          expect(user).to.equal(testSubject)
           done();
         })
         .req(function(req) {
-          request = req;
+          req.body = req.body || {}
+          req.body.mytoken = testToken
         })
         .authenticate();
     });
-    
-    it('should call pass', function() {
-      expect(ok).to.be.true;
+
+    it('should call success with param param', function(done) {
+      chai.passport.use(strategy)
+        .success(function(user) {
+          expect(user).to.equal(testSubject)
+          done();
+        })
+        .fail(function(err) {
+          console.log(err)
+        })
+        .req(function(req) {
+          req.params = req.params || {}
+          req.params.mytoken = testToken
+        })
+        .authenticate();
     });
-    
-    it('should leave req.user undefined', function() {
-      expect(request.user).to.be.undefined;
+
+    it('should call success with query param', function(done) {
+      chai.passport.use(strategy)
+        .success(function(user) {
+          expect(user).to.equal(testSubject)
+          done();
+        })
+        .req(function(req) {
+          req.query = req.query || {}
+          req.query.mytoken = testToken
+        })
+        .authenticate();
     });
 
   });
-  // */
 
 });
